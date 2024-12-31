@@ -1,0 +1,4 @@
+2024.11.7 在lego-loam中使用kitti，将utility.h中extern const bool useCloudRing = false
+
+
+http://223.84.144.29/a79.html?wlanuserip=10.193.7.114&wlanacnamp=&wlanacip=218.204.128.10&wlanparameter=db72661791de0a4c8a514a872aa2090911c550d8bd22719f

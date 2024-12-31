@@ -1,0 +1,19 @@
+单独安装依赖的方法
+cmake .. -DCMAKE_INSTALL_PREFIX=/home/zhurui/dependencies/ceres-solver-1.14.x/install
+make -j$(nproc)
+make install -j$(nproc)
+
+cmakelists修改
+set(Ceres_DIR "/home/zhurui/dependencies/ORBSLAM3/Pangolin/install/lib/cmake/Pangolin")
+find_package(Ceres REQUIRED)
+
+include_directories(
+  include
+${CERES_INCLUDE_DIRS}
+
+)
+link_directories("/home/zhurui/dependencies/ORBSLAM3/Pangolin/install/lib")
+或者：
+find_package(PCL 1.12 REQUIRED 
+PATHS /home/robot/Documents/pcl-1.12_installfile
+)

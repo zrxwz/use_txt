@@ -1,0 +1,20 @@
+选择分支
+git clone -b <branch_name> <repository_url>
+
+代理
+git clone https://ghp.ci/https://github.com/XidianLemon/calibration_camera_lidar.gi
+
+代理分支
+git clone -b <branch_name> https://ghp.ci/
+
+选择指定tags
+git clone --branch 2.2.0 --single-branch https://github.com/ceres-solver/ceres-solver.git
+
+上传到新分支：
+git checkout -b 5
+git status
+git add .
+git commit -m "Updated files for new branch 5"
+git push origin 5
+
+GIT_LFS_SKIP_SMUDGE=1 git clone -b humble-devel https://ghp.ci/https://github.com/Alpaca-zip/ultralytics_ros.git
