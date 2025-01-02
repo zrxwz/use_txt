@@ -37,6 +37,10 @@ Calibration params (roll,pitch,yaw,x,y,z): -1.5790,0.0073,-1.5565,0.0791,-0.0147
 在三维SLAM跑KITTI数据集转换话题
 rosbag play kitti_2011_09_26_drive_0009_synced.bag /kitti/velo/pointcloud:=/velodyne_points
 
+清理系统缓存
+rm -rf /home/zhurui/.cache/*
+
+
 
 
 

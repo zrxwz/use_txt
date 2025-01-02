@@ -1,18 +1,60 @@
-docker images  # 查看本机镜像列表
-docker rmi {-f} {image}  # 删除镜像（-f强制删除）
-docker search {image}  # 搜索镜像
-docker pull {image:tag}  # 拉取镜像
-docker system df  # 查看镜像容器所占的空间
+# 查看本机镜像列表
+docker images
 
-docker ps -a  # 查看本机所有container
-docker rm {container_name}  # 删除container
-docker start {container_name}  # 打开container
-docker stop {container_name}  # 关闭container
-docker exec -it {container_name} /bin/bash  # 进入container
+# 删除镜像（-f强制删除）
+docker rmi {-f} {image}
 
-syetemctl start docker  # 启动docker
-systemctl stop docker  # 停止docker
-systemctl restart docker  重启docker
-查看docker状态: systemctl status docker
-查看docker概要信息:docker info
+# 搜索镜像
+docker search {image}
+
+# 拉取镜像
+docker pull {image:tag}
+
+# 查看镜像容器所占的空间
+docker system df
+
+# 查看本机所有container
+docker ps -a
+
+# 删除container
+docker rm {container_name}
+
+# 打开container
+docker start {container_name}
+
+# 关闭container
+docker stop {container_name}
+
+# 进入container
+docker exec -it {container_name} /bin/bash
+
+# 启动docker
+systemctl start docker
+
+# 停止docker
+systemctl stop docker
+
+# 重启docker
+systemctl restart docker
+
+# 查看docker状态
+systemctl status docker
+
+# 查看docker概要信息
+docker info
+
+# 复制文件到docker容器中
+docker cp /home/zhurui/models humble1:/home/zhurui/ros2_ws/install/ultralytics_ros/share/ultralytics_ros
+
+# 启动并配置容器
+sudo docker run -dit --name=humble2 --privileged \
+  -v /home/zhurui:/home/zhurui \
+  -v /tmp/.X11-unix:/tmp/.X11-unix \
+  --device=/dev/dri/renderD128 \
+  -v /dev:/dev -v /dev/dri:/dev/dri \
+  --device=/dev/snd \
+  -e DISPLAY=unix$DISPLAY \
+  -w /home/zhurui \
+  --runtime=nvidia --gpus all \
+  fishros2/ros:humble-desktop-full
 
